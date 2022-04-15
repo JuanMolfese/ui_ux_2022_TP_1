@@ -2,22 +2,36 @@
 
 let canvas = document.getElementById("miCanvas");
 let ctx = /** @type {CanvasRenderingContext2D} */ (canvas.getContext("2d"));
-let imageData = ctx.createImageData(canvas.width,canvas.height);
+//let imageData = ctx.createImageData(canvas.width,canvas.height);
+let gradient = ctx.createLinearGradient(0,0, canvas.width ,0);
 
+gradient.addColorStop(0, 'black');
+//gradient.addColorStop(.5, 'cyan');
+gradient.addColorStop(1, 'white');
+
+ctx.fillStyle = gradient;
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+
+/*
 let r = 0;
 let g = 0;
 let b = 0;
 
-
+ 
 function drawRect(imageData, r, g, b){
     
-    let coeficiente = 255/canvas.width ;
+    
+    let coeficiente = 255/canvas.width;
     
     for(let x = 0; x < canvas.width; x++) {
+     
         r = coeficiente*x;           
         g = coeficiente*x;
         b = coeficiente*x;
+
         console.log(r, g, b);    
+        
         for(let y = 0; y < canvas.height; y++){
             
             setPixel(imageData, x, y, r, g, b);    
@@ -37,3 +51,4 @@ function setPixel(imageData, x, y, r, g, b){
 
 drawRect(imageData, r, g, b);
 ctx.putImageData(imageData, 0, 0);
+*/

@@ -1,3 +1,7 @@
+"use strict";
+
+let canvas = document.getElementById("miCanvas");
+let ctx = /** @type {CanvasRenderingContext2D} */ (canvas.getContext("2d"));
 let width = 500;
 let height = 500;
 let imageData = ctx.createImageData(width,height);
